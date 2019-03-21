@@ -1,0 +1,43 @@
+pizza 13
+lasagne 23
+pasta 32
+macaroni 23
+spaghetti 17
+linguine 22
+tortellini 10
+cherries 3
+grapefruit 3
+apricots 8
+apple 6
+mango 8
+cantaloupe 4
+orange 5
+pineapple 7
+watermelon 4
+corn 9
+potato 22
+fries 20
+pinto beans 10
+black beans 5
+lentil 5
+burger 17
+hamburger 17
+broccoli 3
+avocado 1
+lettuce 1
+spinach 0
+onion 1
+pepper 2
+mushroom 1
+sprout 3
+cabbage 2
+cauliflower 2
+tomato 4
+squash 1
+brown rice 25
+white rice 30
+jasmine rice 22
+ice cream 20
+healthy 0
+low fat 0
+sugar free 0 
