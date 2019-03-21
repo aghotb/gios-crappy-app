@@ -22,6 +22,7 @@ export class HomeResultsPage {
   searchKey = '';
   yourLocation = '123 Test Street';
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
+  results = [];
 
   constructor(
     public navCtrl: NavController,
@@ -31,7 +32,6 @@ export class HomeResultsPage {
     public modalCtrl: ModalController,
     public toastCtrl: ToastController
   ) {
-
   }
 
   ionViewWillEnter() {
@@ -40,6 +40,69 @@ export class HomeResultsPage {
 
   settings() {
     this.navCtrl.navigateForward('settings');
+  }
+
+  async search() {
+    this.results.push(
+      {
+        name: "Maria's Mexican Restaurant & Bakery",
+        address: "6055 E Lake Mead Blvd",
+        city: "Las Vegas",
+        state: "NV",
+        stars: 5,
+        price_range: 1
+      }
+    )
+    this.results.push(
+      {
+        name: "La Creperie",
+        address: "3655 Las Vegas Blvd S",
+        city: "Las Vegas",
+        state: "NV",
+        stars: 4,
+        price_range: 2
+      }
+    )
+    this.results.push(
+      {
+        name: "Pita Pit",
+        address: "1263 Silverado Ranch Blvd",
+        city: "Las Vegas",
+        state: "NV",
+        stars: 4,
+        price_range: 1
+      }
+    )
+    this.results.push(
+      {
+        name: "Empress Court",
+        address: "3570 Las Vegas Blvd S",
+        city: "Las Vegas",
+        state: "NV",
+        stars: 4,
+        price_range: 3
+      }
+    )
+    this.results.push(
+      {
+        name: "Maria's Mexican Restaurant & Bakery",
+        address: "6055 E Lake Mead Blvd",
+        city: "Las Vegas",
+        state: "NV",
+        stars: 4,
+        price_range: 1
+      }
+    )
+    this.results.push(
+      {
+        name: "Chipotle Mexican Grill",
+        address: "3475 Las Vegas Blvd S",
+        city: "Las Vegas",
+        state: "NV",
+        stars: 4,
+        price_range: 1
+      }
+    )
   }
 
   async alertLocation() {

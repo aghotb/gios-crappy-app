@@ -27,7 +27,12 @@
 
 <ion-content>
   <ion-card no-margin class="no-radius">
+
     <ion-item lines="none" color="medium">
+        <ion-button shape="round" fill="outline" size="small" color="primary" (click)="search()">
+            Search
+            <ion-icon name="search"></ion-icon>
+          </ion-button>
       <ion-label>
         <h2 no-margin class="fw500 no-margin">
           <ion-text color="dark"></ion-text>
@@ -39,7 +44,24 @@
       </ion-button>
     </ion-item>
   </ion-card>
+
+  <ion-card no-margin class="no-radius" class="results">
+      <h2 no-margin class="fw500 no-margin">
+          <ion-text color="dark">Results</ion-text>
+      </h2>
+      <ion-list>
+        <ion-item *ngFor="let term of results;">
+          <h2>{{term.name}}</h2>
+          <br>
+          <p>{{term.address}}</p>
+          <br>
+          <p>Stars: {{term.stars}}</p>
+          <br>
+          <p>Price range: {{term.price_range}}</p>
+        </ion-item>
+      </ion-list>
+  </ion-card>  
+
   
   <popmenu></popmenu>
 </ion-content>
-  
