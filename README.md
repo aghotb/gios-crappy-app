@@ -1,4 +1,4 @@
-Gio's Crappy App
+Healthy search project for CS125 
 
 npm install
 
