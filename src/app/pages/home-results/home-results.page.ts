@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage'
+
 import {
   NavController,
   AlertController,
@@ -12,6 +14,8 @@ import { SearchFilterPage } from '../../pages/modal/search-filter/search-filter.
 import { ImagePage } from './../modal/image/image.page';
 // Call notifications test by Popover and Custom Component.
 import { NotificationsComponent } from './../../components/notifications/notifications.component';
+import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
+import { Condition } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-home-results',
@@ -23,6 +27,14 @@ export class HomeResultsPage {
   yourLocation = '123 Test Street';
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
   results = [];
+  radius = 1;
+  organizeby = '';
+  minmaxprice = {lower: 0, upper: 10};
+  dishtype = '';
+  dishnationality = '';
+  condition = [];
+  preferred_eating_time = 'none';
+  
 
   constructor(
     public navCtrl: NavController,
@@ -30,12 +42,22 @@ export class HomeResultsPage {
     public popoverCtrl: PopoverController,
     public alertCtrl: AlertController,
     public modalCtrl: ModalController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    private storage: Storage
   ) {
+    storage.get('condition').then((p) => {
+      this.condition = p;
+    })
+    storage.get('preferred_eating_time').then((p) => {
+      this.preferred_eating_time = p;
+    })
   }
+
+ 
 
   ionViewWillEnter() {
     this.menuCtrl.enable(true);
+
   }
 
   settings() {
@@ -43,6 +65,15 @@ export class HomeResultsPage {
   }
 
   async search() {
+    this.results = []
+
+    this.storage.get('condition').then((p) => {
+      this.condition = p;
+    })
+    this.storage.get('preferred_eating_time').then((p) => {
+      this.preferred_eating_time = p;
+    })
+    
     this.results.push(
       {
         name: "Maria's Mexican Restaurant & Bakery",
@@ -148,6 +179,17 @@ export class HomeResultsPage {
     const modal = await this.modalCtrl.create({
       component: SearchFilterPage
     });
+
+    modal.onDidDismiss()
+    .then((data) => {
+      const obj = data['data'];
+      this.radius = obj.radius;
+      this.minmaxprice = obj.minmaxprice;
+      this.organizeby = obj.organizeby;
+      this.dishtype = obj.dishtype;
+      this.dishnationality = obj.dishnationality;
+    });
+
     return await modal.present();
   }
 

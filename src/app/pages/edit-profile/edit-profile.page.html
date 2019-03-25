@@ -35,21 +35,21 @@
     
             <ion-item>
               <ion-label color="dark">Condition</ion-label>
-              <ion-select>
-                <ion-select-option value="nes">Diabetes</ion-select-option>
-                <ion-select-option value="n64">Celiacs Disease</ion-select-option>
-                <ion-select-option value="ps">Dairy Intolerrance</ion-select-option>
-                <ion-select-option value="genesis">Vegetarian</ion-select-option>
+              <ion-select [(ngModel)]="condition">
+                <ion-select-option>Diabetes</ion-select-option>
+                <ion-select-option>Celiacs Disease</ion-select-option>
+                <ion-select-option>Dairy Intolerance</ion-select-option>
+                <ion-select-option>Vegetarian</ion-select-option>
               </ion-select>
             </ion-item>
     
             <ion-item>
               <ion-label color="dark">Preferred Eating Time</ion-label>
-              <ion-select>
-                <ion-select-option value="nes">No Preference</ion-select-option>
-                <ion-select-option value="n64">Breakfast</ion-select-option>
-                <ion-select-option value="ps">Lunch</ion-select-option>
-                <ion-select-option value="genesis">Dinner</ion-select-option>
+              <ion-select [(ngModel)]="preferred_eating_time">
+                <ion-select-option>No Preference</ion-select-option>
+                <ion-select-option>Breakfast</ion-select-option>
+                <ion-select-option>Lunch</ion-select-option>
+                <ion-select-option>Dinner</ion-select-option>
               </ion-select>
             </ion-item>
           </ion-list>

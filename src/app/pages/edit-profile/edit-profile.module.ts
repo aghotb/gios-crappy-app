@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { IonicStorageModule } from '@ionic/storage'
 
 import { EditProfilePage } from './edit-profile.page';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    IonicStorageModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   declarations: [EditProfilePage]

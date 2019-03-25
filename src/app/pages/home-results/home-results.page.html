@@ -51,12 +51,11 @@
       </h2>
       <ion-list>
         <ion-item *ngFor="let term of results;">
-          <h2>{{term.name}}</h2>
-          <br>
+          <p>{{term.name}}</p>
           <p>{{term.address}}</p>
-          <br>
+          <p>{{term.city}}</p>
+          <p>{{term.state}}</p>
           <p>Stars: {{term.stars}}</p>
-          <br>
           <p>Price range: {{term.price_range}}</p>
         </ion-item>
       </ion-list>

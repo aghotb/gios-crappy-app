@@ -12,6 +12,10 @@ export class SearchFilterPage implements OnInit {
     upper: 500,
     lower: 10
   };
+  public organizeby;
+  public dishtype;
+  public dishnationality;
+
 
   constructor(private modalCtrl: ModalController) { }
 
@@ -19,7 +23,13 @@ export class SearchFilterPage implements OnInit {
   }
 
   closeModal() {
-    this.modalCtrl.dismiss();
+    this.modalCtrl.dismiss({
+      radius: this.radiusmiles,
+      minmaxprice: this.minmaxprice,
+      organizeby: this.organizeby,
+      dishtype: this.dishtype,
+      dishnationality: this.dishnationality
+    });
   }
 
 }
