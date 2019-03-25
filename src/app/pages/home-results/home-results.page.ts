@@ -34,6 +34,7 @@ export class HomeResultsPage {
   dishnationality = '';
   condition = [];
   preferred_eating_time = 'none';
+  zipcode = '55555';
   
 
   constructor(
@@ -73,7 +74,11 @@ export class HomeResultsPage {
     this.storage.get('preferred_eating_time').then((p) => {
       this.preferred_eating_time = p;
     })
-    
+
+    this.storage.get("zipcode").then((p) => {
+      this.zipcode = p;
+    })
+
     this.results.push(
       {
         name: "Maria's Mexican Restaurant & Bakery",

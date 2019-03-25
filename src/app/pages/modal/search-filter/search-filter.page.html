@@ -17,7 +17,7 @@
     <ion-label color="primary" stacked>
     	<ion-text color="dark" class="fw500">ZipCode Area</ion-text>
     </ion-label>
-    <ion-input type="number" placeholder="Put your zipcode preference area"></ion-input>
+    <ion-input type="number" [(ngModel)]="zipcode" placeholder="Put your zipcode preference area"></ion-input>
   </ion-item>
 
 	<ion-item>
@@ -44,13 +44,9 @@
 	<ion-item>
 	  <ion-label class="fw500" color="dark">Dish Type</ion-label>
 	  <ion-select [(ngModel)]="dishtype" multiple="true">
-	    <ion-select-option>Health Food</ion-select-option>
 	    <ion-select-option>Veggie</ion-select-option>
 	    <ion-select-option>Pasta</ion-select-option>
 	    <ion-select-option>Barbecue</ion-select-option>
-	    <ion-select-option>Casual Dining</ion-select-option>
-	    <ion-select-option>Fine Dining</ion-select-option>
-	    <ion-select-option>Street Food</ion-select-option>
 	    <ion-select-option>Fast Food</ion-select-option>
 	    <ion-select-option>Pizza</ion-select-option>
 	  </ion-select>
